@@ -1,4 +1,4 @@
-shelldon
+Shelldon
 ========
 
 Python-wrapper of bash (whut)
