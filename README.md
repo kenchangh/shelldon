@@ -6,14 +6,12 @@ Python-wrapper of Bash (whut)
 
 ###Table of Content
 - [Introduction](#intro)
-- [Installation](#install)
 - [Usage](#usage)
-- [Software Used](#software)
 - [License](#license)
 - [Support](#support)
 
 ###Introduction<a name='intro'></a>
-Whuttttt. A Python-wrapper for Bash? You know how you want to sometimes make some shell commands? And then you go for:
+Whuttttt. A Python-wrapper for Bash? You know how you want to sometimes make some shell commands from Python? And then you go for:
 
 ```
 import subprocess
@@ -22,7 +20,7 @@ import subprocess
 subprocess.call(['git', 'add', '--all']
 ```
 
-I find that way, way to much to type. Also, why put it into a form of list?
+I find that way, way too much to type. Also, why put it into a form of a list?
 
 Why can't we just write `subprocess.call('git add --all')`?
 
@@ -53,7 +51,7 @@ Downloads
 Music
 Pictures
 ~$ >> cd Desktop
-~/Desktop$ >> quit #Use this command to quit shelldon's terminal
+~/Desktop$ >> quit # Use this command to quit shelldon's terminal
 >> print 'yay to using shell in Python!' # Back to Python interpreter
 ```
 
