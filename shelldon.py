@@ -5,9 +5,6 @@ import sys
 import shlex
 import subprocess
 
-home = os.path.expanduser('~')
-os.chdir(home)
-
 class CommandError(Exception):
     def __init__(self, message):
         # Call the base class constructor with the parameters it needs
@@ -38,6 +35,9 @@ def split_cmd(cmd):
     return cmd_lines
 
 def terminal():
+    home = os.path.expanduser('~')
+    os.chdir(home)
+
     print ("Shelldon's interactive terminal.\n" + 
            "Enter 'quit' to exit and 'help' for documentation.\n")
 
@@ -45,12 +45,15 @@ def terminal():
         cwd = os.getcwd()
         cwd = cwd.replace(home, '~')
         cmd = raw_input(cwd + '$ ')
-        
+
         if cmd == 'quit':
             break
 
         elif cmd == 'help':
-            print """This is the incomplete help page"""
+            help_dir = os.path.join(os.path.dirname(__file__), 'help', 'help.txt')
+            with open(help_dir, 'r') as f:
+                help_page = f.read()
+            print help_page
 
         else:
             call(cmd)
