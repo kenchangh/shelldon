@@ -38,13 +38,13 @@ def terminal():
     home = os.path.expanduser('~')
     os.chdir(home)
 
-    print ("Shelldon's interactive terminal.\n" + 
-           "Enter 'quit' to exit and 'help' for documentation.\n")
+    print ("\nShelldon's interactive terminal.\n" + 
+           "Enter 'quit' to exit and 'help' for documentation.")
 
     while True:
         cwd = os.getcwd()
         cwd = cwd.replace(home, '~')
-        cmd = raw_input(cwd + '$ ')
+        cmd = raw_input('\n' + cwd + '$ ')
 
         if cmd == 'quit':
             break
