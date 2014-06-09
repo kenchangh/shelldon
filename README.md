@@ -34,9 +34,10 @@ shelldon.call('git add --all') # So simple isn't it?!
 
 **Or, if you want to have multiple commands bundled together:**
 ```
-shelldon.call("""git add --all
-                 git commit -m 'Initial commit'
-                 git push origin master
+shelldon.call("""
+              git add --all
+              git commit -m 'Initial commit'
+              git push origin master
               """)
 ```
 
