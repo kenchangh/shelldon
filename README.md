@@ -13,7 +13,7 @@ Python-wrapper of Bash (whut)
 ###Introduction<a name='intro'></a>
 Whuttttt. A Python-wrapper for Bash? You know how you want to sometimes make some shell commands from Python? And then you go for:
 
-```
+```python
 import subprocess
   
 # Normally you do this from a Python script
