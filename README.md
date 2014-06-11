@@ -7,6 +7,7 @@ Shelldon
 Table of Content
 ----------------
 - [Introduction](#intro)
+- [Installation](#install)
 - [Usage](#usage)
 - [License](#license)
 - [Support](#support)
@@ -26,7 +27,19 @@ I find that way, way too much to type. Also, why put it into a form of a list?
 
 Why can't we just write `subprocess.call('git add --all')`?
 
-###
+Installation<a name='install'></a>
+----------------------------------
+Just install the Raw shelldon.py. Then, add it to your Python Path, like this:
+```shell
+export PYTHONPATH=$PYTHONPATH:/~/path/to/the/shelldon.py
+```
+
+Test it by opening your Python shell.
+
+```
+>>> import shelldon
+>>> # It works!
+```
 
 Usage<a name='usage'></a>
 -------------------------
