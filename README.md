@@ -1,16 +1,18 @@
 Shelldon
 ========
 
-Python-wrapper of Bash (whut)
------------------------------
+###Python-wrapper of Bash (whut)
 
-###Table of Content
+
+Table of Content
+----------------
 - [Introduction](#intro)
 - [Usage](#usage)
 - [License](#license)
 - [Support](#support)
 
-###Introduction<a name='intro'></a>
+Introduction<a name='intro'></a>
+--------------------------------
 Whuttttt. A Python-wrapper for Bash? You know how you want to sometimes make some shell commands from Python? And then you go for:
 
 ```python
@@ -24,7 +26,10 @@ I find that way, way too much to type. Also, why put it into a form of a list?
 
 Why can't we just write `subprocess.call('git add --all')`?
 
-###Usage<a name='usage'></a>
+###
+
+Usage<a name='usage'></a>
+-------------------------
 **Normal script use:**
 ```python
 import shelldon
@@ -44,7 +49,7 @@ shelldon.call("""
 **Terminal use:**
 ```python
 >> import shelldon
->> shelldon.term()
+>> shelldon.terminal()
 ~$ >> ls
 Desktop         Programs
 Documents       Public
@@ -56,11 +61,12 @@ Pictures
 >> print 'yay to using shell in Python!' # Back to Python interpreter
 ```
 
-
-###License<a name='license'></a>
+License<a name='license'></a>
+-----------------------------
 The following code is released under the MIT license. See above for it.
 
-###Support<a name='support'></a>
+Support<a name='support'></a>
+-----------------------------
 If you have any questions/concerns, please feel free to contact me.
 My email address is guanhao3797@gmail.com
 
