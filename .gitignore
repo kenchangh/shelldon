@@ -42,3 +42,11 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+# Vim ignores
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
