@@ -27,6 +27,8 @@ I find that way, way too much to type. Also, why put it into a form of a list?
 
 Why can't we just write `subprocess.call('git add --all')`?
 
+This script is used in the [Git.py](https://github.com/maverick97/git.py) project for parsing git commands.
+
 Installation<a name='install'></a>
 ----------------------------------
 Just install the Raw shelldon.py. Then, add it to your Python Path, like this:
