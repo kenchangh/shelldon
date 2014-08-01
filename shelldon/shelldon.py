@@ -5,10 +5,12 @@ import sys
 import shlex
 import subprocess
 
+
 class CommandError(Exception):
     def __init__(self, message):
         # Call the base class constructor with the parameters it needs
         Exception.__init__(self, message)
+
 
 def call(cmd):
     cmd_lines = split_cmd(cmd)
@@ -16,13 +18,14 @@ def call(cmd):
         call_list = shlex.split(line)
         try:
             subprocess.call(call_list)
-        
+
         except OSError:
             if call_list[0] == 'cd':
-                try: 
+                try:
                     os.chdir(call_list[1])
                 except:
                     raise CommandError('cd requires a directory!')
+
 
 def split_cmd(cmd):
     cmd_lines = cmd.splitlines()
@@ -34,11 +37,12 @@ def split_cmd(cmd):
     cmd_lines = filter(lambda x: x != '', cmd_lines)
     return cmd_lines
 
+
 def terminal():
     home = os.path.expanduser('~')
     os.chdir(home)
 
-    print ("\nShelldon's interactive terminal.\n" + 
+    print ("\nShelldon's interactive terminal.\n" +
            "Enter 'quit' to exit and 'help' for documentation.")
 
     while True:
@@ -50,11 +54,11 @@ def terminal():
             break
 
         elif cmd == 'help':
-            help_dir = os.path.join(os.path.dirname(__file__), 'help', 'help.txt')
+            help_dir = os.path.join(os.path.dirname(__file__),
+                                    'help', 'help.txt')
             with open(help_dir, 'r') as f:
                 help_page = f.read()
             print help_page
 
         else:
             call(cmd)
-
