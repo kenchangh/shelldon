@@ -22,7 +22,9 @@ def call(cmd):
                 try: 
                     os.chdir(call_list[1])
                 except:
-                    raise CommandError('cd requires a directory!')
+                    raise CommandError(
+                    '{cmd} is not a valid command!'.format(
+                    cmd = cmd))
 
 def split_cmd(cmd):
     cmd_lines = cmd.splitlines()
@@ -52,5 +54,10 @@ def terminal():
             print help_page
 
         else:
-            call(cmd)
+            try:
+                call(cmd)
+            except EOFError:
+                break
+            if not cmd:
+                break
 
