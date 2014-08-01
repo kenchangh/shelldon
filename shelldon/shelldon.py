@@ -26,11 +26,7 @@ def call(cmd):
 
 def split_cmd(cmd):
     cmd_lines = cmd.splitlines()
-
-    for index, line in enumerate(cmd_lines):
-        line = line.strip()
-        cmd_lines[index] = line
-
+    cmd_lines = map(lambda x: x.strip(), cmd_lines)
     cmd_lines = filter(lambda x: x != '', cmd_lines)
     return cmd_lines
 
