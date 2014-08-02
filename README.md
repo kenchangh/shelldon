@@ -82,4 +82,4 @@ The following code is released under the MIT license.
 Support<a name='support'></a>
 -----------------------------
 If you have any questions/concerns, please feel free to contact me.
-You can mail me at guanhao3797@gmail.com or tweet to @guanhao97!
+You can mail me at guanhao3797@gmail.com or tweet to [@guanhao97](https://twitter.com/guanhao97)!
