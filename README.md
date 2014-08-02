@@ -1,7 +1,6 @@
 Shelldon
 ========
-
-###Python-wrapper of Bash (whut)
+**Python-wrapper of Bash (whut)**
 
 
 Table of Content
@@ -78,11 +77,9 @@ Pictures
 
 License<a name='license'></a>
 -----------------------------
-The following code is released under the MIT license. See above for it.
+The following code is released under the MIT license.
 
 Support<a name='support'></a>
 -----------------------------
 If you have any questions/concerns, please feel free to contact me.
 My email address is guanhao3797@gmail.com
-
-**Will update README once project is more substantial.**
