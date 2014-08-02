@@ -61,18 +61,18 @@ shelldon.call("""
 ```
 
 **Terminal use:**
-```python
->> import shelldon
->> shelldon.terminal()
-~$ >> ls
+```shell
+>>> import shelldon
+>>> shelldon.terminal()
+~$ ls
 Desktop         Programs
 Documents       Public
 Downloads
 Music
 Pictures
-~$ >> cd Desktop
-~/Desktop$ >> quit # Use this command to quit shelldon's terminal
->> print 'yay to using shell in Python!' # Back to Python interpreter
+~$ cd Desktop
+~/Desktop$ quit # Use this command to quit shelldon's terminal
+>>> print 'yay to using shell in Python!' # Back to Python interpreter
 ```
 
 License<a name='license'></a>
