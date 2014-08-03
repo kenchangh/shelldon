@@ -1,7 +1,6 @@
 Shelldon
 ========
-
-###Python-wrapper of Bash (whut)
+### Python-wrapper of Bash (whut)
 
 
 Table of Content
@@ -26,6 +25,8 @@ subprocess.call(['git', 'add', '--all']
 I find that way, way too much to type. Also, why put it into a form of a list?
 
 Why can't we just write `subprocess.call('git add --all')`?
+
+This script is used in the [Git.py](https://github.com/maverick97/git.py) project for parsing git commands.
 
 Installation<a name='install'></a>
 ----------------------------------
@@ -60,27 +61,25 @@ shelldon.call("""
 ```
 
 **Terminal use:**
-```python
->> import shelldon
->> shelldon.terminal()
-~$ >> ls
+```shell
+>>> import shelldon
+>>> shelldon.terminal()
+~$ ls
 Desktop         Programs
 Documents       Public
 Downloads
 Music
 Pictures
-~$ >> cd Desktop
-~/Desktop$ >> quit # Use this command to quit shelldon's terminal
->> print 'yay to using shell in Python!' # Back to Python interpreter
+~$ cd Desktop
+~/Desktop$ quit # Use this command to quit shelldon's terminal
+>>> print 'yay to using shell in Python!' # Back to Python interpreter
 ```
 
 License<a name='license'></a>
 -----------------------------
-The following code is released under the MIT license. See above for it.
+The following code is released under the MIT license.
 
 Support<a name='support'></a>
 -----------------------------
 If you have any questions/concerns, please feel free to contact me.
-My email address is guanhao3797@gmail.com
-
-**Will update README once project is more substantial.**
+You can mail me at guanhao3797@gmail.com or tweet to [@guanhao97](https://twitter.com/guanhao97)!

@@ -22,18 +22,20 @@ def call(cmd):
         except OSError:
             if call_list[0] == 'cd':
                 try:
+                    # ~ will raise CommandError, need to expand
+                    if call_list[1][0] == '~':
+                        call_list[1] = call_list[1].replace(
+                            '~',
+                            os.path.expanduser('~'))
                     os.chdir(call_list[1])
                 except:
-                    raise CommandError('cd requires a directory!')
+                    raise CommandError('{0} is not a valid command.'.format(
+                                       call_list[0]))
 
 
 def split_cmd(cmd):
     cmd_lines = cmd.splitlines()
-
-    for index, line in enumerate(cmd_lines):
-        line = line.strip()
-        cmd_lines[index] = line
-
+    cmd_lines = map(lambda x: x.strip(), cmd_lines)
     cmd_lines = filter(lambda x: x != '', cmd_lines)
     return cmd_lines
 
@@ -45,20 +47,27 @@ def terminal():
     print ("\nShelldon's interactive terminal.\n" +
            "Enter 'quit' to exit and 'help' for documentation.")
 
-    while True:
-        cwd = os.getcwd()
-        cwd = cwd.replace(home, '~')
-        cmd = raw_input('\n' + cwd + '$ ')
+    try:
+        while True:
+            cwd = os.getcwd()
+            cwd = cwd.replace(home, '~')
+            cmd = raw_input('\n' + cwd + '$ ')
 
-        if cmd == 'quit':
-            break
+            if cmd == 'quit':
+                break
 
-        elif cmd == 'help':
-            help_dir = os.path.join(os.path.dirname(__file__),
-                                    'help', 'help.txt')
-            with open(help_dir, 'r') as f:
-                help_page = f.read()
-            print help_page
+            elif cmd == 'help':
+                help_dir = os.path.join(os.path.dirname(__file__),
+                                        'help', 'help.txt')
+                with open(help_dir, 'r') as f:
+                    help_page = f.read()
+                print help_page
 
-        else:
-            call(cmd)
+            else:
+                if cmd:
+                    call(cmd)
+                if not cmd:
+                    break
+    except EOFError:
+        # Quit on ^D
+        print '\n'
