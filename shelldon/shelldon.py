@@ -5,10 +5,12 @@ import sys
 import shlex
 import subprocess
 
+
 class CommandError(Exception):
     def __init__(self, message):
         # Call the base class constructor with the parameters it needs
         Exception.__init__(self, message)
+
 
 def call(cmd):
     cmd_lines = split_cmd(cmd)
@@ -16,18 +18,20 @@ def call(cmd):
         call_list = shlex.split(line)
         try:
             subprocess.call(call_list)
-        
+
         except OSError:
             if call_list[0] == 'cd':
-                try: 
+                try:
                     # ~ will raise CommandError, need to expand
                     if call_list[1][0] == '~':
-                        call_list[1] = call_list[1].replace('~',
-                                       os.path.expanduser('~')) 
+                        call_list[1] = call_list[1].replace(
+                            '~',
+                            os.path.expanduser('~'))
                     os.chdir(call_list[1])
                 except:
                     raise CommandError('{0} is not a valid command.'.format(
                                        call_list[0]))
+
 
 def split_cmd(cmd):
     cmd_lines = cmd.splitlines()
@@ -35,13 +39,14 @@ def split_cmd(cmd):
     cmd_lines = filter(lambda x: x != '', cmd_lines)
     return cmd_lines
 
+
 def terminal():
     home = os.path.expanduser('~')
     os.chdir(home)
 
-    print ("\nShelldon's interactive terminal.\n" + 
+    print ("\nShelldon's interactive terminal.\n" +
            "Enter 'quit' to exit and 'help' for documentation.")
-    
+
     try:
         while True:
             cwd = os.getcwd()
@@ -66,5 +71,3 @@ def terminal():
     except EOFError:
         # Quit on ^D
         print '\n'
-        
-
